@@ -74,7 +74,7 @@ export class PaymentComponent implements OnInit {
   cancel(){
     this.paymentService.cancel(this.bookedConfirmId).subscribe((data: any) => {
       const info = "Reservation successfully canceled";
-      this.successMessage = ""
+      this.successMessage = info
     })
   }
 
@@ -87,7 +87,7 @@ export class PaymentComponent implements OnInit {
     }
 
     this.paymentService.confirm(paymentConfirm).subscribe((data: any) => {
-      const info = "Reservation successfully confirmed";
+      const info = "Reservation successfully confirmed!";
       this.successMessage = info
     })
   }
