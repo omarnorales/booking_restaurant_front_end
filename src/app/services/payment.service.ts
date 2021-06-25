@@ -1,14 +1,18 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Booked } from '../shared/models/payment-model';
+import { Booked, PaymentConfirm, PaymentIntent } from '../shared/models/payment-model';
+
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class PaymemntService {
+export class PaymentService {
 
   private booked: Booked;
+  private API = "http://localhost:8080/booking-restaurant/v1/payment/";
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   setBooked(booked: Booked){
     this.booked = booked;
@@ -16,5 +20,18 @@ export class PaymemntService {
 
   getBooked(){
     return this.booked;
+  }
+
+  buy(payment: PaymentIntent){
+
+    return this.http.post(this.API + 'paymentIntent', payment)
+  }
+
+  cancel(paymentId: string){
+    return this.http.post( this.API + 'cancel/'+paymentId, {})
+  }
+
+  confirm(payment: PaymentConfirm){
+    return this.http.post( this.API + 'confirm', payment)
   }
 }

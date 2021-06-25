@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AppService } from 'src/app/services/app.service';
-import { PaymemntService } from 'src/app/services/payment.service';
+import { PaymentService } from 'src/app/services/payment.service';
 import { InfoDialogComponent } from 'src/app/shared/dialogs/info-dialog/info-dialog.component';
 import { Booking } from 'src/app/shared/models/booking-models';
 import { Restaurant } from 'src/app/shared/models/restaurant-model';
@@ -24,7 +24,7 @@ export class BookingFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
               private service: AppService,
-              private paymentService: PaymemntService,
+              private paymentService: PaymentService,
               public dialog: MatDialog,
               private router: Router) { }
 

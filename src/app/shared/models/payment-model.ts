@@ -6,3 +6,19 @@ export class Booked extends Booking {
 
 }
 
+export interface PaymentIntent{
+
+    description: string,
+    price: number
+
+}
+
+export interface PaymentConfirm{
+
+    email:     string,
+    locator:   string,
+    name:      string,
+    paymentId: string
+
+}
+

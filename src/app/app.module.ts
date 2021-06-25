@@ -16,6 +16,7 @@ import { NoimagePipe } from './pipes/noimage.pipe';
 import { InfoDialogComponent } from './shared/dialogs/info-dialog/info-dialog.component';
 import { BookingFormComponent } from './components/booking/booking-form/booking-form.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { NgxStripeModule } from 'ngx-stripe';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { PaymentComponent } from './components/payment/payment.component';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
+    NgxStripeModule.forRoot('pk_test_51J5EJuFdvJS3LCzOxmSYUwPoHUqKeixYrDkHYjiqdc0NT3RCeKjzn1mGUCLzrTx0PSmJAqeZxhUYK5gfVHJUli7j00guWEYKih')
   ],
   providers: [],
   bootstrap: [AppComponent]
