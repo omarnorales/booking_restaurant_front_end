@@ -1,0 +1,37 @@
+<mat-card>
+
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+
+        <mat-step [stepControl]="firstFormGroup" label="Payment" [editable]="isEditable">
+            <form [formGroup]="firstFormGroup">
+                <ng-template matStepLabel>Step 1</ng-template>
+                <div>PAGO</div>
+                <button mat-button matStepperNext color="primary">Next</button>
+            </form>
+
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup" label="summary" [editable]="isEditable">
+
+            <ng-template matStepLabel>Step 2</ng-template>
+            <div class="">
+
+                <h1>Payment Detail</h1>
+                <h3>Name: </h3>
+                <h3>Price: </h3>
+                <h3>Reservation Code: </h3>
+
+            </div>
+
+            <button mat-button (click)="cancel()" matStepperPrevious color="primary">Cancel</button>
+            <button mat-button (click)="confirm()" matStepperNext color="primary">Confirmar</button>
+
+        </mat-step>
+
+        <mat-step label="done" [editable]="isEditable">
+            <ng-template matStepLabel>Done</ng-template>
+            <h1>Info Message</h1>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+</mat-card>

@@ -1,0 +1,16 @@
+<h1>Cancel reservation</h1>
+<div class="row">
+    <div class="col-sm-6">
+        <mat-form-field class="form-full-width">
+            <mat-label>Enter your reservation code</mat-label>
+            <input matInput [(ngModel)]="codeReservation">
+        </mat-form-field>
+
+    </div>
+    <div class="col-sm-1">
+        <button (click)="sendCancel()" [disabled]="!codeReservation" class="btn fa-pull-right" type="button" mat-raised-button>Enviar</button>
+    </div>
+    <div>
+        <h3>{{state}}</h3>
+    </div>
+</div>

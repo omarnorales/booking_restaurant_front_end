@@ -1,0 +1,24 @@
+<div class="row">
+    <!-- si es una pantalla pequeña utiliza las 12 columnas, si es mediana utiliza 4 columnas -->
+    <!-- col-md-4 (ocupa 4 de 12 columnas)colunas, bootstrap setea un total de 12 columnas por pagina -->
+    <div *ngFor="let restaurant of restaurants" class="col-sm-12 col-md-4 mt-3">
+
+        <mat-card class="card-theme">
+            <mat-card-header>
+                <div mat-card-avatar class="odre-header-image"></div>
+            </mat-card-header>
+            <img mat-card-image [src]=restaurant.image alt="Restaurante">
+            <mat-card-content>
+                <mat-card-title>{{ restaurant.name }}</mat-card-title>
+                <mat-card-subtitle>{{ restaurant.address }}</mat-card-subtitle>
+                <p></p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button (click)="book( restaurant.id )" mat-raised-button color="primary">Book</button>
+                <!-- <button [routerLink]="['/booking', restaurant.id ]" mat-raised-button color="primary">Book 02</button> -->
+            </mat-card-actions>
+        </mat-card>
+
+    </div>
+
+</div>
