@@ -40,7 +40,7 @@ import { NgxStripeModule } from 'ngx-stripe';
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    NgxStripeModule.forRoot('pk_test_51J5EJuFdvJS3LCzOxmSYUwPoHUqKeixYrDkHYjiqdc0NT3RCeKjzn1mGUCLzrTx0PSmJAqeZxhUYK5gfVHJUli7j00guWEYKih')
+    NgxStripeModule.forRoot(YOUR_PUBLIC_KEY)
   ],
   providers: [],
   bootstrap: [AppComponent]
